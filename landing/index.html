@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCP Tools — nối trợ lý AI với OpenProject và Docmost</title>
+<meta name="description" content="Hai MCP server mã nguồn mở giúp trợ lý AI làm việc trực tiếp với OpenProject và Docmost: openproject-mcp trên npm, mcp-docmost trên PyPI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6fa;--surface:#fff;--ink:#141a24;--muted:#566173;--line:#d8dee8;--accent:#3a5bd9;--code:#eef1f8;
+--font:"IBM Plex Sans",system-ui,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#0f131a;--surface:#161b24;--ink:#e3e8f0;--muted:#98a3b5;--line:#283040;--accent:#8aa2ff;--code:#1c2230}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;padding-inline:20px}
+.wrap{max-width:1000px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;padding-block:20px;font-size:14px;color:var(--muted)}
+header b{color:var(--ink);font-size:16px}
+.hero{padding-block:48px 40px}
+h1{font-size:clamp(30px,4.6vw,46px);line-height:1.15;margin:0 0 14px;letter-spacing:-.02em;text-wrap:balance;max-width:22ch}
+.lede{font-size:18px;color:var(--muted);max-width:60ch;margin:0}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-bottom:40px}
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;display:grid;gap:14px;align-content:start}
+.tool h2{margin:0;font-size:22px}
+.pkg{font-family:var(--mono);font-size:13px;color:var(--muted)}
+pre{margin:0;background:var(--code);border-radius:8px;padding:12px 14px;font-family:var(--mono);font-size:14px;overflow-x:auto}
+ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.links{display:flex;gap:16px;font-size:14px}
+.links a{color:var(--accent);text-decoration:none;font-weight:500}
+.links a:hover{text-decoration:underline}
+section{border-top:1px solid var(--line);padding-block:36px}
+section h2{font-size:22px;margin:0 0 12px}
+section p{color:var(--muted);max-width:68ch;margin:0 0 12px}
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:14px}
+@media (max-width:760px){.tools{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><b>MCP Tools</b><span>Mã nguồn mở · MIT</span></header>
+
+<div class="hero">
+  <h1>Cho trợ lý AI đọc và cập nhật công việc, tài liệu của nhóm.</h1>
+  <p class="lede">Hai MCP server nối các trợ lý hỗ trợ Model Context Protocol (Claude, Kiro, Cursor…) với OpenProject và Docmost. Trợ lý tìm, tạo và cập nhật work package hay trang tài liệu ngay trong cuộc trò chuyện.</p>
+</div>
+
+<div class="tools">
+  <div class="tool">
+    <h2>OpenProject MCP</h2>
+    <div class="pkg">npm · openproject-mcp</div>
+    <pre>npm install -g openproject-mcp</pre>
+    <ul>
+      <li>Liệt kê, tạo và cập nhật work package, xem work package con</li>
+      <li>Xem dự án, trạng thái, loại công việc và người dùng</li>
+      <li>Ghi thời gian làm việc, gọi thẳng API khi cần</li>
+    </ul>
+    <div class="links"><a href="https://www.npmjs.com/package/openproject-mcp">Trang npm</a><a href="https://github.com/cyborgx0x/mcp-openproject">Mã nguồn</a></div>
+  </div>
+  <div class="tool">
+    <h2>Docmost MCP</h2>
+    <div class="pkg">PyPI · mcp-docmost</div>
+    <pre>uvx mcp-docmost</pre>
+    <ul>
+      <li>Đọc, tìm, tạo, sửa và xoá trang</li>
+      <li>Quản lý space, bình luận, lịch sử sửa</li>
+      <li>Xuất trang ra Markdown, HTML hoặc PDF</li>
+    </ul>
+    <div class="links"><a href="https://pypi.org/project/mcp-docmost/">Trang PyPI</a><a href="https://github.com/cyborgx0x/mcp-docmost">Mã nguồn</a></div>
+  </div>
+</div>
+
+<section>
+  <h2>Cấu hình</h2>
+  <p>Mỗi server cần URL của instance và một token truy cập, khai báo trong tệp cấu hình MCP của trợ lý. Tạo token trong OpenProject tại My Account › Access tokens; với Docmost, dùng token đăng nhập của tài khoản. Hướng dẫn chi tiết nằm trong README của từng repo.</p>
+</section>
+
+<footer>MCP Tools · một phần của danh mục cyborgx0x. Báo lỗi hoặc đề xuất tính năng qua GitHub Issues của từng repo.</footer>
+</div>
+</body>
+</html>
